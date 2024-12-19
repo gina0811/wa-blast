@@ -11,7 +11,7 @@ class CreateContactsTable extends Migration
         Schema::create('contacts', function (Blueprint $table) {
             $table->id(); // Kolom ID auto-increment
             $table->string('name'); // Kolom Nama
-            $table->string('phone'); // Kolom Telepon
+            $table->string('phone', 20); // Kolom Telepon, panjang maksimal 20
             $table->string('email')->unique(); // Kolom Email (unik)
             $table->timestamps(); // Kolom created_at dan updated_at
         });

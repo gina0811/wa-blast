@@ -9,8 +9,8 @@ class AutoReplyController extends Controller
 {
     public function index()
     {
-        $autoReplies = AutoReply::all();
-        return view('auto-reply.index', compact('autoReplies'));
+        $autoReply = AutoReply::all();
+        return view('auto-reply.index', compact('autoReply'));
     }
 
     public function create()
@@ -21,7 +21,7 @@ class AutoReplyController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'keyword' => 'required|string|unique:auto_replies',
+            'keyword' => 'required|string|unique:auto_reply',
             'response' => 'required|string',
         ]);
 
@@ -38,7 +38,7 @@ class AutoReplyController extends Controller
     public function update(Request $request, AutoReply $autoReply)
     {
         $request->validate([
-            'keyword' => 'required|string|unique:auto_replies,keyword,' . $autoReply->id,
+            'keyword' => 'required|string|unique:auto_reply,keyword,' . $autoReply->id,
             'response' => 'required|string',
         ]);
 

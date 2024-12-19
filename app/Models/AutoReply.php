@@ -9,8 +9,9 @@ class AutoReply extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'keyword',
-        'response',
-    ];
+    // Pastikan nama tabel sesuai dengan yang ada di database
+    protected $table = 'auto_replies';  // Menambahkan nama tabel yang benar
+    
+    // Menambahkan kolom yang boleh diisi
+    protected $fillable = ['keyword', 'response'];
 }

@@ -3,8 +3,8 @@
 @section('title', 'Auto Reply Management')
 
 @section('content')
-<div class="container">
-    <h4 class="fw-bold py-3 mb-4">Auto Reply Management</h4>
+<div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4 text-primary"><span class="text-muted fw-light">Page/</span> Auto Reply</h4>
 
     <!-- Flash message -->
     @if (session('success'))
@@ -15,7 +15,7 @@
 
     <!-- Tombol Action -->
     <div class="mb-3">
-        <a href="{{ route('wa.auto-reply.create') }}" class="btn btn-success">Tambah Auto Reply</a>
+        <a href="{{ route('wa.auto-reply.create') }}" class="btn btn-primary">Create Auto Reply</a>
         <a href="#" class="btn btn-info">Import Data</a>
         <a href="#" class="btn btn-danger">Export Data</a>
     </div>
